@@ -12,3 +12,41 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+ul
+{
+  list-style: none;
+}
+li
+{
+  padding: 20px;
+  background-color: darkorange;
+  width: 50%;
+  border-radius: 30px;
+  margin: 20px auto;
+}
+li:hover
+{
+  background-color: gold; 
+}
+button.icon
+  {
+    border-radius: 30px;
+    border: none;
+    width: 30px;
+    height: 30px;
+    display: inline-block; 
+    float: right;
+    text-align: center;
+    cursor: pointer;
+    background-color: transparent;
+    margin-right: 10px;
+    transition: all .2s;
+  }
+  img
+  {
+    width: 100%;
+  }
+  button:hover
+  {
+    transform: scale(1.1);
+  }

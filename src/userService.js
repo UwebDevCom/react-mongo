@@ -1,4 +1,4 @@
-const SERVER_URL = "https://test-nov-18.herokuapp.com/";  //http://localhost:8080
+const SERVER_URL = "https://test-nov-18.herokuapp.com";  //http://localhost:8080
 
 
 export class UsersService {

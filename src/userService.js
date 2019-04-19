@@ -9,10 +9,10 @@ export class UsersService {
     async createUser(user){
         await fetch(SERVER_URL+'/users',{
             method: 'POST',
-            header: {
+            headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(user),
+            body: JSON.stringify(user)
         });
     }
 

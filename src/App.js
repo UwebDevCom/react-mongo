@@ -22,17 +22,15 @@ class App extends Component {
 
 async fetchUsers(){
   const users = await usersService.fetchUsers();
-  this.setState({
-    users,
-  })
+  this.setState({users})
 }
 
 
 async createUser(event) {
   event.preventDefault();
-
   await usersService.createUser({
-    name: this.inputEl.current.value
+    name: this.inputName.current.value,
+    lastName: this.inputLast.current.value
   });
 
   this.fetchUsers();
@@ -55,8 +53,10 @@ clickHandler(){
 }
   render() {
       return (
+
        <Router>
        <div className="App">
+          
           <header>
             <Link to='/users'>Find Users</Link>
             <br />
@@ -64,6 +64,11 @@ clickHandler(){
           </header>
           <h1> find users from mongo</h1>
           <Button dis={()=>this.clickHandler()} name="Dis it!" isDis={this.state.dis} />
+          <form onSubmit={(event)=>this.createUser(event)}>
+          <input ref={this.inputName} className="input-name" name="name" placeholder="enter a pro name:" />
+          <input ref={this.inputLast} className="input-name" name="name" placeholder="enter a pro lastName:" />
+          <input type="submit" />
+        </form>
         <Route path='/' exact={true} component={home} />
         <Route path='/users' render={()=> <UsersList users={this.state.users} deleteUser = {(user)=>this.deleteUser(user)} />}/>
         </div>
